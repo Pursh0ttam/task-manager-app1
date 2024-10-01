@@ -7,6 +7,8 @@ const dotenv = require('dotenv');
 const mongodb = require('./config/db');
 const Router = require('./routes/AuthRoute');
 const todoRoute = require('./routes/TodoRoutes');
+const { organiseMiddleware } = require('./controller/organiseMiddleware');
+const { OrganiseRoute } = require('./routes/OrganiseRouts');
 
 
 //^env configuration
@@ -26,6 +28,7 @@ app.use(express.json())
 app.use(morgan('dev'))
 app.use('/api/v1', Router)
 app.use('/api/v1/todo', todoRoute)
+app.use('/api/v1/organise',OrganiseRoute)
 
 // app.use('*',(req,res)=>{
 //     return res.send({error:true,message:error.message})

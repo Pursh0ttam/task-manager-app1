@@ -7,8 +7,6 @@ const auth = require('../middlewares/auth');
 let todoRoute = express.Router()
 todoRoute.post('/createTodo', auth, createTodo)
 todoRoute.post('/insertManyTodo', auth, insertManyTodo)
-
-
 todoRoute.get('/getAllTodos',auth, getAllTodos)
 
 todoRoute.get('/getTodoById/:id',auth, getTodoById)
